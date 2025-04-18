@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1232</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>118</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	rgb(40, 40, 40);
+qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:2, fx:0.494, fy:0.506045, stop:0 rgba(0, 120, 0, 255), stop:1 rgba(255, 255, 255, 255))
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="igualar">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>380</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Igualar/Pasar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="subir">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>410</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Subir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="retirarse">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>440</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Retirarse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="jugador1">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>360</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JQKAs Wild</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Jugador 1</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>20</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="jugador2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>60</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JQKAs Wild</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Jugador 2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="bote1">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>400</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 700 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="estado1">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>430</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="estado2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>130</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j1_carta1">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>350</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j1_carta2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>350</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta2</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="bote2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>100</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j2_carta2">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>150</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j2_carta1">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>230</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j3_carta2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta2</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="bote3">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>100</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="j3_carta1">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>150</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carta1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="jugador3">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JQKAs Wild</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Jugador 3</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="estado3">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>130</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ganador">
+    <property name="geometry">
+     <rect>
+      <x>462</x>
+      <y>80</y>
+      <width>321</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ganador_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>80</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>GANADOR</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bote_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>BOTE</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>110</y>
+      <width>561</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JQKAs Wild</family>
+      <pointsize>25</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 25pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>TEXAS HOLD 'EM</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="centro1">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>190</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Centro1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="centro3">
+    <property name="geometry">
+     <rect>
+      <x>595</x>
+      <y>190</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Centro3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="centro4">
+    <property name="geometry">
+     <rect>
+      <x>725</x>
+      <y>190</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Centro4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="centro2">
+    <property name="geometry">
+     <rect>
+      <x>465</x>
+      <y>190</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Centro2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="centro5">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>190</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Centro5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fondo">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-21</y>
+      <width>1261</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Fondo</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>210</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid white;
+	border-radius: 15px;
+	color: rgba(0, 85,0,0);
+	background-color: rgb(255, 255, 255,0);
+	padding-left: 20 px;
+	padding-right: 20 px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal_3">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>210</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid white;
+	border-radius: 15px;
+	color: rgba(0, 85,0,0);
+	background-color: rgb(255, 255, 255,0);
+	padding-left: 20 px;
+	padding-right: 20 px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal_4">
+    <property name="geometry">
+     <rect>
+      <x>725</x>
+      <y>210</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid white;
+	border-radius: 15px;
+	color: rgba(0, 85,0,0);
+	background-color: rgb(255, 255, 255,0);
+	padding-left: 20 px;
+	padding-right: 20 px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal_5">
+    <property name="geometry">
+     <rect>
+      <x>595</x>
+      <y>210</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid white;
+	border-radius: 15px;
+	color: rgba(0, 85,0,0);
+	background-color: rgb(255, 255, 255,0);
+	padding-left: 20 px;
+	padding-right: 20 px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="botetotal_6">
+    <property name="geometry">
+     <rect>
+      <x>465</x>
+      <y>210</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid white;
+	border-radius: 15px;
+	color: rgba(0, 85,0,0);
+	background-color: rgb(255, 255, 255,0);
+	padding-left: 20 px;
+	padding-right: 20 px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ronda">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>50</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 10px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 9pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ronda_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>50</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 12pt &quot;JQKAs Wild&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>RONDA</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="comenzar">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>360</y>
+      <width>171</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 40px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 700 15pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}
+</string>
+    </property>
+    <property name="text">
+     <string>NUEVA RONDA</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="salir">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>370</y>
+      <width>171</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 2px solid rgb(40, 40, 40);;
+	border-radius: 40px;
+	color: rgb(40, 40, 40);;
+	padding-left: 20 px;
+	padding-right: 20 px;
+	font: 700 15pt &quot;JQKAs Wild&quot;;
+	background-color: rgb(40, 40, 40);;
+	color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>SALIR</string>
+    </property>
+   </widget>
+   <zorder>fondo</zorder>
+   <zorder>igualar</zorder>
+   <zorder>subir</zorder>
+   <zorder>retirarse</zorder>
+   <zorder>jugador1</zorder>
+   <zorder>botetotal</zorder>
+   <zorder>jugador2</zorder>
+   <zorder>bote1</zorder>
+   <zorder>estado1</zorder>
+   <zorder>estado2</zorder>
+   <zorder>j1_carta1</zorder>
+   <zorder>j1_carta2</zorder>
+   <zorder>bote2</zorder>
+   <zorder>j2_carta2</zorder>
+   <zorder>j2_carta1</zorder>
+   <zorder>j3_carta2</zorder>
+   <zorder>bote3</zorder>
+   <zorder>j3_carta1</zorder>
+   <zorder>jugador3</zorder>
+   <zorder>ganador</zorder>
+   <zorder>ganador_2</zorder>
+   <zorder>bote_2</zorder>
+   <zorder>label_4</zorder>
+   <zorder>botetotal_2</zorder>
+   <zorder>botetotal_3</zorder>
+   <zorder>botetotal_4</zorder>
+   <zorder>botetotal_5</zorder>
+   <zorder>botetotal_6</zorder>
+   <zorder>centro4</zorder>
+   <zorder>centro2</zorder>
+   <zorder>centro5</zorder>
+   <zorder>centro3</zorder>
+   <zorder>centro1</zorder>
+   <zorder>estado3</zorder>
+   <zorder>ronda</zorder>
+   <zorder>ronda_2</zorder>
+   <zorder>comenzar</zorder>
+   <zorder>salir</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1232</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
