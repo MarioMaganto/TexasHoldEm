@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QLabel>
 #include <QPainter>
+#include <QTimer>
 #include <QTransform>
 #include "utilidades.h"
 #include <QPixmap>
@@ -26,6 +27,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Poner todo en invisible.
     //1. Poner todas las cartas en invisible.
+    ui->ganado->setVisible(false);
+    ui->perdido->setVisible(false);
+
     ui->centro1->setVisible(false);
     ui->centro2->setVisible(false);
     ui->centro3->setVisible(false);
@@ -71,6 +75,7 @@ MainWindow::MainWindow(QWidget *parent)
     //A partir de esta función comienza el siguiente flujo: iniciar partida->Apuestas->1ª ronda (siguienteRonda)->Apuestas->2ª ronda (siguienteRonda)->Apuestas->
     //3ª ronda (terminarRondas)->Mostar cartas de los jugadores finales y determinar ganador.
     jugadores={100,100,100};
+    eliminados={false,false,false};
 }
 
 // Función para rotar un QPixmap
@@ -126,7 +131,6 @@ void MainWindow::inicializarPartida(){
     ui->ganador->setVisible(false);
     ui->ganador_2->setVisible(false);
 
-    ui->comenzar->setVisible(false);
     ui->salir->setVisible(false);
     ui->bote1->setVisible(true);
     ui->bote2->setVisible(true);
@@ -144,6 +148,21 @@ void MainWindow::inicializarPartida(){
 
     ui->ronda->setVisible(true);
     ui->ronda_2->setVisible(true);
+
+    ui->comenzar->setVisible(false);
+
+    //Eliminar al jugador que ha perdido.
+    if ((jugadores[1]==0)||(jugadores[2]==0)){
+        if (eliminados[1]==true){
+            ui->jugador2->setVisible(false);
+            ui->estado2->setVisible(false);
+            ui->bote2->setVisible(false);
+        }else{
+            ui->jugador3->setVisible(false);
+            ui->estado3->setVisible(false);
+            ui->bote3->setVisible(false);
+        }
+    }
 
     //5. Inicializar variables.
     srand(time(0));
@@ -289,11 +308,11 @@ void MainWindow::terminarRondas(){
 
     //2. Mostrar las cartas de los jugadores activos.
     for (int j=1; j<3; j++){
-        if ((activos[j])&&(j==1)){
+        if ((activos[j])&&(j==1)&&(eliminados[j]==false)){
             ui->j2_carta1->setVisible(true);
             ui->j2_carta2->setVisible(true);
 
-        }else if ((activos[j])&&(j==2)){
+        }else if ((activos[j])&&(j==2)&&(eliminados[j]==false)){
             ui->j3_carta1->setVisible(true);
             ui->j3_carta2->setVisible(true);
         }
@@ -304,17 +323,17 @@ void MainWindow::terminarRondas(){
     Mano aux;
 
     //Guardar puntuaciones.
-    if (activos[0]){
+    if ((activos[0])&&(eliminados[0]==false)){
         aux=mano1;
         aux.combinarManos(centro);
         puntuaciones[0]=aux.obtenerVictoria();
     }
-    if (activos[1]){
+    if ((activos[1])&&(eliminados[1]==false)){
         aux=mano2;
         aux.combinarManos(centro);
         puntuaciones[1]=aux.obtenerVictoria();
     }
-    if (activos[2]){
+    if ((activos[2])&&(eliminados[2]==false)){
         aux=mano3;
         aux.combinarManos(centro);
         puntuaciones[2]=aux.obtenerVictoria();
@@ -328,7 +347,7 @@ void MainWindow::terminarRondas(){
     //puntuaciones similares. Si se da el primer caso, se borra la lista de empatados; mientras que
     //si se da el segundo, se amplía.
     for (int i=0; i<3; i++){
-        if (activos[i]){
+        if ((activos[i])&&(eliminados[i]==false)){
             if ((ganador==-1)||(puntuaciones[i]>puntuaciones[ganador])) {
                 ganador=i;
                 empatados.clear();
@@ -377,7 +396,20 @@ void MainWindow::terminarRondas(){
     ui->ganador_2->setVisible(true);
 
     //6. Dar la opción de seguir jugando.
-    ui->comenzar->setVisible(true);
+    if (jugadores[0]==0){
+        ui->perdido->setVisible(true);
+    } else if ((jugadores[1]==0)&&(jugadores[2]==0)){
+        ui->ganado->setVisible(true);
+    } else{
+        ui->comenzar->setVisible(true);
+    }
+
+    if (jugadores[1]==0){
+        eliminados[1]=true;
+    }else if (jugadores[2]==0){
+        eliminados[2]=true;
+    }
+
     ui->salir->setVisible(true);
 }
 
@@ -400,10 +432,10 @@ void MainWindow::inicializarApuestas(){
 void MainWindow::humanoApuesta(){
 
     //1. Dejar apostar al jugador si el jugador está activo, todavía no ha apostado y no es el único que sigue activo.
-    if ((!yaAposto[0])&&(activos[0])&&(retirados<2)){
+    if ((!yaAposto[0])&&(activos[0])&&(retirados!=2)&&(jugadores[0]>0)){
 
         //Darle todas las opciones si todavía no ha subido la apuesta.
-        if ((!subioApuesta[0])&&(!pasoTurno[0])){
+        if ((!subioApuesta[0])&&(!pasoTurno[0])&&(jugadores[0]>0)){
             ui->igualar->setVisible(true);
             ui->subir->setVisible(true);
             ui->retirarse->setVisible(true);
@@ -412,7 +444,6 @@ void MainWindow::humanoApuesta(){
             ui->igualar->setVisible(true);
             ui->retirarse->setVisible(true);
         }
-
         //2. Si el jugador no está activo, ya ha apostado o es el único que queda, pasar el turno de apuesta al siguiente jugador.
     }else{
         bot1Apuesta();
@@ -428,10 +459,10 @@ void MainWindow::bot1Apuesta(){
     double n=dist(rng);
 
     //2. Dejar apostar al jugador si el jugador está activo, todavía no ha apostado y no es el único que sigue activo.
-    if ((!yaAposto[1])&&(activos[1])&&(retirados<2)){
+    if ((!yaAposto[1])&&(activos[1])&&(retirados!=2)&&(jugadores[1]>0)){
 
         //Darle todas las opciones si todavía no ha subido la apuesta.
-        if ((!subioApuesta[1])&&(!pasoTurno[1])){
+        if ((!subioApuesta[1])&&(!pasoTurno[1])&&(jugadores[1]>0)){
             if (n<0.5) igualarApuesta(1);
             else if (n<0.9) subirApuesta(1);
             else if (!yaAposto[1]) retirarseApuesta(1);
@@ -455,9 +486,9 @@ void MainWindow::bot2Apuesta(){
     double n=dist(rng);
 
     //2. Dejar apostar al jugador si el jugador está activo, todavía no ha apostado y no es el único que sigue activo.
-    if ((!yaAposto[2])&&(activos[2])&&(retirados<2)){
+    if ((!yaAposto[2])&&(activos[2])&&(retirados!=2)&&(jugadores[2]>0)){
         //Darle todas las opciones si todavía no ha subido la apuesta.
-        if ((!subioApuesta[2])&&(!pasoTurno[2])){
+        if ((!subioApuesta[2])&&(!pasoTurno[2])&&(jugadores[2]>0)){
             if (n<0.6) igualarApuesta(2);
             else if (n<0.95) subirApuesta(2);
             else if (!yaAposto[2]) retirarseApuesta(2);
@@ -494,12 +525,13 @@ void MainWindow::igualarApuesta(int j){
     //1. Realizar operaciones.
     //Si el jugador ya subió la apuesta y la apuesta ha vuelto a ser subida, el jugador que iguale solo iguala 5.
     if ((subioApuesta[j])&&(apuestaSubida>0)){
-        jugadores[j]-=5*(apuestaSubida-1);
-        bote+=5*(apuestaSubida-1);
-        //Si el jugador no subió la apuesta y la apuesta ha subido, el jugador iguala todo lo que haya.
+        (jugadores[j]-5*(apuestaSubida-1)<0) ? (bote+=jugadores[j]) : (bote+=5*(apuestaSubida-1));
+        (jugadores[j]-5*(apuestaSubida-1)<0) ? (jugadores[j]=0) : (jugadores[j]-=5*(apuestaSubida-1));
+
+    //Si el jugador no subió la apuesta y la apuesta ha subido, el jugador iguala todo lo que haya.
     }else if (apuestaSubida>0){
-        jugadores[j]-=5;
-        bote+=5;
+        (jugadores[j]-5*(apuestaSubida)<0) ? (bote+=jugadores[j]) : (bote+=5*(apuestaSubida));
+        (jugadores[j]-5*(apuestaSubida)<0) ? (jugadores[j]=0) : (jugadores[j]-=5*(apuestaSubida));
     }
 
     //2. Actualizar estado del jugador y bote.
@@ -516,21 +548,29 @@ void MainWindow::igualarApuesta(int j){
         //Si el jugador humano acaba de apostar, pasar al primer bot.
         case 0:{
             ui->estado1->setText("Igualo/Paso");
-            bot1Apuesta();
+            QTimer::singleShot(1000, this, [=](){
+                bot1Apuesta();
+            });
             break;
             //Si el primer bot acaba de apostar, pasar al segundo bot.
         }case 1:{
             ui->estado2->setText("Igualo/Paso");
-            bot2Apuesta();
+            QTimer::singleShot(2000, this, [=]() {
+                bot2Apuesta();
+            });
             break;
             //Si el segundo bot acaba de apostar, pasar a la siguiente ronda o terminar la partida dependiendo de en qué ronda se esté.
         }case 2:{
             ui->estado3->setText("Igualo/Paso");
             if (ronda<2){
-                siguienteRonda();
+                QTimer::singleShot(2000, this, [=](){
+                    siguienteRonda();
+                });
                 break;
             }else{
-                terminarRondas();
+                QTimer::singleShot(2000, this, [=]() {
+                    terminarRondas();
+                });
                 break;
             }
         }
@@ -539,16 +579,13 @@ void MainWindow::igualarApuesta(int j){
 
 //Subir apuesta.
 void MainWindow::subirApuesta(int j){
-    //1. Realizar operaciones.
-    jugadores[j]-=5*(apuestaSubida);
-    bote+=5*(apuestaSubida);
+    apuestaSubida++;
 
-    //2. Actualizar el bote saldos de los jugadores.
-    jugadores[j]-=apuesta;
-    bote+=apuesta;
+    //1. Realizar operaciones.
+    (jugadores[j]-5*(apuestaSubida)<0) ? (bote+=jugadores[j]) : (bote+=5*(apuestaSubida));
+    (jugadores[j]-5*(apuestaSubida)<0) ? (jugadores[j]=0) : (jugadores[j]-=5*(apuestaSubida));
 
     //3. Indicar que se ha subido la apuesta, quién la ha subido y que el resto de los jugadores aún no han apostado.
-    apuestaSubida++;
     subioApuesta[j]=true;
     fill(begin(yaAposto), end(yaAposto), false);
     yaAposto[j]=true;//El que subió no debe volver a apostar
@@ -566,17 +603,23 @@ void MainWindow::subirApuesta(int j){
         //Si el jugador humano acaba de apostar, pasar al primer bot.
         case 0:{
             ui->estado1->setText("Subio");
-            bot1Apuesta();
+            QTimer::singleShot(2000, this, [=](){
+                bot1Apuesta();
+            });
             break;
             //Si el primer bot acaba de apostar, pasar al segundo bot.
         }case 1:{
             ui->estado2->setText("Subio");
-            humanoApuesta();
+            QTimer::singleShot(2000, this, [=](){
+                humanoApuesta();
+            });
             break;
             //Si el segundo bot acaba de apostar, pasar a la siguiente ronda o terminar la partida dependiendo de en qué ronda se esté.
         }case 2:{
             ui->estado3->setText("Subio");
-            humanoApuesta();
+            QTimer::singleShot(2000, this, [=](){
+                humanoApuesta();
+            });
             break;
         }
     }
@@ -587,6 +630,7 @@ void MainWindow::retirarseApuesta(int j){
     //1. Realizar operaciones.
     activos[j]=false;
     yaAposto[j]=true;
+    retirados++;
 
     //2. Desactivar opciones.
     ui->igualar->setVisible(false);
@@ -598,27 +642,35 @@ void MainWindow::retirarseApuesta(int j){
 
     //4. Pasar al siguiente estado.
     switch (j){
-    case 0:{
-        //Si el jugador humano acaba de apostar, pasar al primer bot.
-        ui->estado1->setText("Se retiro");
-        bot1Apuesta();
-        break;
-        //Si el primer bot acaba de apostar, pasar al segundo bot.
-    }case 1:{
-        ui->estado2->setText("Se retiro");
-        bot2Apuesta();
-        break;
-        //Si el segundo bot acaba de apostar, pasar a la siguiente ronda o terminar la partida dependiendo de en qué ronda se esté.
-    }case 2:{
-        ui->estado3->setText("Se retiro");
-        if (ronda<2){
-            siguienteRonda();
+        case 0:{
+            //Si el jugador humano acaba de apostar, pasar al primer bot.
+            ui->estado1->setText("Se retiro");
+            QTimer::singleShot(2000, this, [=](){
+                bot1Apuesta();
+            });
             break;
-        }else{
-            terminarRondas();
+            //Si el primer bot acaba de apostar, pasar al segundo bot.
+        }case 1:{
+            ui->estado2->setText("Se retiro");
+            QTimer::singleShot(2000, this, [=](){
+                bot2Apuesta();
+            });
             break;
+            //Si el segundo bot acaba de apostar, pasar a la siguiente ronda o terminar la partida dependiendo de en qué ronda se esté.
+        }case 2:{
+            ui->estado3->setText("Se retiro");
+            if (ronda<2){
+                QTimer::singleShot(2000, this, [=](){
+                    siguienteRonda();
+                });
+                break;
+            }else{
+                QTimer::singleShot(2000, this, [=](){
+                    terminarRondas();
+                });
+                break;
+            }
         }
-    }
     }
 }
 
@@ -644,35 +696,17 @@ void MainWindow::actualizarBotesyEstados(int j){
     //2. Actualizar bote.
     }else{
         switch (j){
-        case 0 :{
-            ui->bote1->setText(QString::number(jugadores[j]));
-            break;
-        }case 1 :{
-            ui->bote2->setText(QString::number(jugadores[j]));
-            break;
-        }case 2 :{
-            ui->bote3->setText(QString::number(jugadores[j]));
-            break;
+            case 0 :{
+                ui->bote1->setText(QString::number(jugadores[j]));
+                break;
+            }case 1 :{
+                ui->bote2->setText(QString::number(jugadores[j]));
+                break;
+            }case 2 :{
+                ui->bote3->setText(QString::number(jugadores[j]));
+                break;
+            }
         }
-        }
-    }
-
-    //3. Comprobar cuántos jugadores se han retirado.
-    for (int k=0; k<3; k++){
-        if (!activos[k]) retirados++;
-    }
-
-    //4. Ajustar apuesta.
-    if ((activos[2])&&(j==2)&&(!subioApuesta[2])){
-        apuestaSubida=0;
-        apuesta=5;
-        fill(begin(subioApuesta), end(subioApuesta), false);
-        fill(begin(pasoTurno), end((pasoTurno)), false);
-    }else if ((!activos[2])&&(j==1)&&(!subioApuesta[1])){
-        apuestaSubida=0;
-        apuesta=5;
-        fill(begin(subioApuesta), end(subioApuesta), false);
-        fill(begin((pasoTurno)), end((pasoTurno)), false);
     }
 }
 
